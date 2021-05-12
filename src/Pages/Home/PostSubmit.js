@@ -6,7 +6,7 @@ import './PostForm.css';
 
 const PostSubmit = ({submitForm}) => {
 
-    const { handleChange, values, handleSubmit, errors } = useForm(
+    const { handleChange, handleSubmit, values, errors } = useForm(
         submitForm,
         validate
     );
