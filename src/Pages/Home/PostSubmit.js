@@ -1,32 +1,33 @@
 import React from 'react';
 import useForm from './useForm/useForm';
+import validate from './validationPost';
+import './PostForm.css';
 
-const PostSubmit = () => {
 
-    const { handleChange, values, handleSubmit, errors } = useForm();
+const PostSubmit = ({submitForm}) => {
+
+    const { handleChange, values, handleSubmit, errors } = useForm(
+        submitForm,
+        validate
+    );
 
     return (
         <>
-        <div>
-
-        </div>
     <div className="quick-order">
         <form className="form" onSubmit={handleSubmit}>
-            <h3>
-                Voer hier uw adres in
-            </h3>
-            <label>
-                Adres
+            <div className="form-input">
+            <label className="address-label"> Adres </label>
                 <input
                     id="post"
-                    type="text"
+                    type="code"
                     name="post"
                     className="post-input"
                     placeholder=" Postcode..."
                     value={values.post}
                     onChange={handleChange}
                 />
-            </label>
+            {errors.post && <p>{errors.post}</p>}
+            </div>
             <button
                 className="form-input-btn" type="submit"
             >Bestellen</button>
