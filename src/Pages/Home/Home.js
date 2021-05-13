@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PostSubmit from './PostSubmit';
-import Menu from '../Menu';
+import Menu from '../Menu/Menu';
 
 function Home() {
     const [isSubmitted, setIsSubmitted] = useState(false);

@@ -5,7 +5,7 @@ import { BrowserRouter as Router,
     Route} from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home/Home';
-import Menu from './Pages/Menu';
+import Menu from './Pages/Menu/Menu';
 
 import Logo from './Assets/Yang Yang Sushi Logo.png';
 

@@ -1,0 +1,29 @@
+.Menu{
+    padding: 20px;
+}
+.MenuIcon {
+    padding: 20px;
+}
+.next-previous {
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gerechten {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+header .Menu,
+header .close{
+    display: block;
+}
+
+header .close{
+    position: absolute;
+}
