@@ -3,7 +3,7 @@ function ValidationPost(values) {
 
     if(!values.post.trim()) {
         errors.post = "Postcode is verplicht";
-    } else if(!/^[0-9]{4}[A-Z]{2}$/i.test(values.post)) {
+    } else if(!/^[0-9]{4}[A-Z]{2}$/i.test(values.post.trim())) {
         errors.post = "Postcode klopt niet";
     }
     return errors;

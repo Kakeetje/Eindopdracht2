@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 
+
 const UseForm = (callback, validate) => {
 
     const [values, setValues] = useState({
@@ -30,7 +31,7 @@ const UseForm = (callback, validate) => {
         }
     }, [errors]);
 
-    return { handleChange, handleSubmit, values, errors}
+    return { handleChange, handleSubmit, values, errors }
 }
 
 export default UseForm;

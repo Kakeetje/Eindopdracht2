@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PostSubmit from './PostSubmit';
-import Menu from '../Menu/Menu';
 
 function Home() {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -9,7 +8,6 @@ function Home() {
     function submitForm() {
         setIsSubmitted(true);
     }
-
 
     return(
         <>
@@ -21,11 +19,7 @@ function Home() {
             </h3>
 
             <div>
-            {!isSubmitted ?  <PostSubmit submitForm={submitForm} /> : <Switch>
-                <Route path="/menu">
-                    <Menu />
-                </Route>
-            </Switch>}
+            {!isSubmitted ?  <PostSubmit submitForm={submitForm} /> : <Redirect to="/menu" />}
             </div>
         </>
     );
