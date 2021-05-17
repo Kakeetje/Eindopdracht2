@@ -1,15 +1,26 @@
 .Menu{
     padding: 20px;
 }
-.MenuIcon {
-    padding: 20px;
-}
+
 .next-previous {
     padding-top: 5vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.sushi-category a:link {
+    color:black;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.MenuIcon {
+    padding: 20px;
 }
 
 .gerechten {

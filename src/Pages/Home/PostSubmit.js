@@ -1,5 +1,5 @@
 import React from 'react';
-import useForm from './useForm/useForm';
+import useForm from './useForm';
 import validate from './validationPost';
 import './PostForm.css';
 
