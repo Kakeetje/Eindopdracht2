@@ -2,6 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
 import './NavBar.css';
 import Nigiri from "./Nigiri";
+import Hosomaki from "./Hosomaki";
+
 
 function Navbar(props) {
     return (
@@ -24,8 +26,10 @@ function Navbar(props) {
                     <Route path="/menu/nigiri" component={Nigiri}>
                         <Nigiri />
                     </Route>
+                    <Route path="/menu/hosomaki">
+                        <Hosomaki/>
+                    </Route>
                 </Switch>
-
             </Router>
         </div>
     );
