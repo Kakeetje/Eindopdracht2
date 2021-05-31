@@ -6,7 +6,7 @@ import { BrowserRouter as Router,
 import './App.css';
 import Home from './Pages/Home/Home';
 import Menu from './Pages/Menu/Menu';
-
+import Contact from './Pages/Contact/Contact';
 import Logo from './Assets/Yang Yang Sushi Logo.png';
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
                                     <ul>
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="/menu">Menu</Link></li>
+                                        <li><Link to="/contact">Contact</Link></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -40,6 +41,9 @@ function App() {
                         </Route>
                         <Route path="/menu">
                             <Menu />
+                        </Route>
+                        <Route path="/contact">
+                            <Contact />
                         </Route>
                     </Switch>
                 </Router>
