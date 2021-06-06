@@ -5,18 +5,21 @@ import Navbar from "./Navbar";
 
 export default function Menu() {
 
-    const [filter, setFilter] = useState(true);
+    const [showResults, setShowResults] = useState(false);
+    const onClick = () => setShowResults(true);
 
-    if (filter === true) {
-        return <Navbar />
-    } else {
-        return (
-            <>
-                <div>
-                    <MainMenu/>
+    return(
+        <div>
+                <div className="side-by-side">
+                    <div className="content">
+                        <MainMenu/>
+                    </div>
+                    <div>
+                        <Navbar className="SideMenu-Links" onClick={onClick}/>
+                        {showResults ? <MainMenu /> : null}
+                    </div>
                 </div>
-            </>
-        );
-    }
+        </div>
+    )
 }
 

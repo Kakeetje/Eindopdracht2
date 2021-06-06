@@ -3,9 +3,11 @@ import {BrowserRouter as Router, Link, Switch, Route} from "react-router-dom";
 import './NavBar.css';
 import Nigiri from "./Nigiri";
 import Hosomaki from "./Hosomaki";
+import MainMenu from "./MainMenu";
 
 
 function Navbar(props) {
+
     return (
         <div>
             <Router>

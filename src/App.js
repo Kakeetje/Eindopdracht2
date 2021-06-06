@@ -9,6 +9,7 @@ import Menu from './Pages/Menu/Menu';
 import Contact from './Pages/Contact/Contact';
 import Logo from './Assets/Yang Yang Sushi Logo.png';
 
+
 function App() {
 
     return (
@@ -39,7 +40,7 @@ function App() {
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/menu">
+                        <Route path="/menu" >
                             <Menu />
                         </Route>
                         <Route path="/contact">

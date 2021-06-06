@@ -3,6 +3,7 @@ import axios from "axios";
 import Chopsticks from "../../Assets/Chopsticks-for-Loading.gif";
 import GerechtenCards from "./GerechtenCards";
 
+
 function MainMenu() {
     const [gerechten, setGerechten] = useState(null);
     const [pagina, setPagina] = useState(0);
