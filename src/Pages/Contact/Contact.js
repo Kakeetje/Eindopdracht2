@@ -12,6 +12,8 @@ import { formatRelative } from 'date-fns';
 import mapStyles from "./mapStyles";
 import Logo from '../../Assets/YangYang-rood.png';
 import '../Assets/compass.svg';
+import './Contact.css';
+import compass from '../../Assets/compass.svg'
 
 import {
     Combobox,
@@ -39,20 +41,24 @@ const options = {
     zoomControl: true,
 };
 
-function opening() {
+function Opening() {
+
     return(
-        <div className="opening">
-            <p>Maandag:        12.00-21.00</p>
-            <p>Dinsdag:        12.00-21.00</p>
-            <p>Woensdag:       12.00-21.00</p>
-            <p>Donderdag:      12.00-21.00</p>
-            <p>Vrijdag:        12.00-21.00</p>
-            <p>Zaterdag:       12.00-21.00</p>
-            <p>Zondag:         14.00-21.00</p>
+        <div className="OpHours">
+            <table className="opening">
+                <p className="Titel">Openingstijden</p>
+                <tr><th>Maandag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Dinsdag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Woensdag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Donderdag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Vrijdag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Zaterdag:</th><td>12.00 - 21.00</td></tr>
+                <tr><th>Zondag:</th><td>12.00 - 21.00</td></tr>
+            </table>
         </div>
     );
 
-} opening();
+} Opening();
 
 
 function Contact() {
@@ -93,6 +99,7 @@ function Contact() {
                 🍣
             </span>
             </h1>
+            <Opening />
             <Locate panTo={panTo}/>
             <Search panTo={panTo}/>
             <GoogleMap
@@ -127,8 +134,8 @@ function Contact() {
                         <div>
                             <p>Bestel nu uw sushi {''}
                                 <span className={"Heart"} role="img" aria-label="rood-hart" >
-                            ❤
-                        </span>
+                                    ❤
+                                </span>{" "}
                             </p>
                         </div>
 
@@ -155,7 +162,7 @@ function Locate({panTo}) {
                     () => null
                 );
             }}
-        ><img src="compass.svg" alt="compass" />
+        ><img src={compass} alt="compass" />
         </button>
     );
 }
