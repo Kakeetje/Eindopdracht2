@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home';
 import Menu from './Pages/Menu/Menu';
 import Contact from './Pages/Contact/Contact';
 import Logo from './Assets/Yang Yang Sushi Logo.png';
+import Login from './Pages/Login/Login';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="/menu">Menu</Link></li>
                                         <li><Link to="/contact">Contact</Link></li>
+                                        <li><Link to="/contact">Login</Link></li>
                                     </ul>
                                 </div>
                             </nav>
