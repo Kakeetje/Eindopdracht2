@@ -14,9 +14,12 @@ code {
     monospace;
 }
 
-.search {
+.OpHours{
+    top: 15rem;
+}
+
+.Search {
     position: absolute;
-    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -24,22 +27,23 @@ code {
     z-index: 10;
 }
 
-.search input {
+.Search input {
     padding: 0.5rem;
     font-size: 1.5rem;
     width: 100%;
 }
 
-.locate {
+.Locate {
     position: absolute;
     top: 1rem;
     right: 1rem;
     background: none;
     border: none;
     z-index: 10;
+
 }
-.locate img {
-    width: 30px;
+.Locate img {
+    left: 50%;
     cursor: pointer;
 }
 
@@ -47,6 +51,4 @@ code {
     font-weight: bold;
 }
 
-.OpHours{
-    top: 15rem;
-}
+

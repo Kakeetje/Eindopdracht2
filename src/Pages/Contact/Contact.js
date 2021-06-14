@@ -8,13 +8,10 @@ import { GoogleMap,
     useLoadScript,
     Marker,
     InfoWindow } from '@react-google-maps/api';
-import { formatRelative } from 'date-fns';
 import mapStyles from "./mapStyles";
 import Logo from '../../Assets/YangYang-rood.png';
 import '../Assets/compass.svg';
 import './Contact.css';
-import compass from '../../Assets/compass.svg'
-
 import {
     Combobox,
     ComboboxInput,
@@ -24,6 +21,7 @@ import {
     ComboboxOptionText,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
+import Compass from '../../Assets/compass.svg';
 
 const myApiKey = 'AIzaSyBh1VO89IJJWgCkptkcKPew4MJApXi_wW8';
 const libraries = ["places"];
@@ -45,8 +43,9 @@ function Opening() {
 
     return(
         <div className="OpHours">
+            <h2 className="Titel">Openingstijden</h2>
             <table className="opening">
-                <p className="Titel">Openingstijden</p>
+                <tbody>
                 <tr><th>Maandag:</th><td>12.00 - 21.00</td></tr>
                 <tr><th>Dinsdag:</th><td>12.00 - 21.00</td></tr>
                 <tr><th>Woensdag:</th><td>12.00 - 21.00</td></tr>
@@ -54,6 +53,7 @@ function Opening() {
                 <tr><th>Vrijdag:</th><td>12.00 - 21.00</td></tr>
                 <tr><th>Zaterdag:</th><td>12.00 - 21.00</td></tr>
                 <tr><th>Zondag:</th><td>12.00 - 21.00</td></tr>
+                </tbody>
             </table>
         </div>
     );
@@ -84,6 +84,7 @@ function Contact() {
         mapRef.current.panTo({lat, lng});
         mapRef.current.setZoom(14);
     }, []);
+
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: myApiKey,
         libraries,
@@ -162,7 +163,7 @@ function Locate({panTo}) {
                     () => null
                 );
             }}
-        ><img src={compass} alt="compass" />
+        > <img src={Compass} alt="compass" viewBox="2 1 20 20" stroke="#000000" height="30px" width="30px"/>
         </button>
     );
 }
@@ -185,7 +186,8 @@ function Search({panTo}) {
 
     return(
         <div className="Search">
-            <Combobox onSelect={async (address) => {
+            <Combobox onSelect={
+                async (address) => {
                 setValue(address, false);
                 clearSuggestions();
                 try {
