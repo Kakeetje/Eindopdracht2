@@ -10,6 +10,7 @@ import Contact from './Pages/Contact/Contact';
 import Logo from './Assets/Yang Yang Sushi Logo.png';
 import SignIn from './Pages/Login/SignIn';
 import SignUp from "./Pages/Login/SignUp";
+import Profile from "./Pages/Profile/Profile";
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
                                         <li><Link to="/">Home</Link></li>
                                         <li><Link to="/menu">Menu</Link></li>
                                         <li><Link to="/contact">Contact</Link></li>
-                                        <li><Link to="/login">Login</Link></li>
-                                        <li><Link to="/register">Register</Link></li>
+                                        <li><Link to="/signin">Login</Link></li>
+                                        <li><Link to="/signup">Register</Link></li>
+                                        <li><Link to="/profile">Mijn Profiel</Link></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -50,11 +52,14 @@ function App() {
                         <Route path="/contact">
                             <Contact />
                         </Route>
-                        <Route path="/login">
+                        <Route path="/signin">
                             <SignIn />
                         </Route>
-                        <Route path="/register" >
+                        <Route path="/signup" >
                             <SignUp />
+                        </Route>
+                        <Route path="/profile">
+                            <Profile />
                         </Route>
                     </Switch>
                 </Router>

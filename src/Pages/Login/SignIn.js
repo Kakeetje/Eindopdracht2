@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+import { Link, useHistory } from 'react-router-dom';
+
 
 // STAPPENPLAN CONTEXT TESTEN (4)
 // - [x] Importeer de AuthContext in een component die de data zal gaan gebruiken
@@ -25,15 +25,19 @@ import { AuthContext } from './AuthContext';
 
 function SignIn() {
     const { handleSubmit, register } = useForm();
-    const { login } = useContext(AuthContext);
+    const history = useHistory();
 
     async function onSubmit(data) {
         console.log(data);
 
         try {
             const result = await axios.post('http://localhost:3000/login', data);
-            console.log(result);
-            login(result.data.accessToken);
+            console.log(result.data.accessToken);
+
+            localStorage.setItem('Banaan', result.data.accessToken);
+
+            history.push('/profile');
+
         } catch(e) {
             console.error(e);
         }
@@ -42,8 +46,6 @@ function SignIn() {
     return (
         <>
             <h1>Inloggen</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum debitis dolor dolore fuga id molestias qui quo unde?</p>
-
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="email-field">
                     Emailadres:
