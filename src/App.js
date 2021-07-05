@@ -9,7 +9,7 @@ import Menu from './Pages/Menu/Menu';
 import Contact from './Pages/Contact/Contact';
 import Logo from './Assets/Yang Yang Sushi Logo.png';
 import SignIn from './Pages/Login/SignIn';
-import SignUp from "./Pages/Login/SignUp";
+import SignUp from "./Pages/Register/SignUp";
 import Profile from "./Pages/Profile/Profile";
 
 

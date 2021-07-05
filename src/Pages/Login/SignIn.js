@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AuthContext } from "../../Context/AuthContext";
 
 
 // STAPPENPLAN CONTEXT TESTEN (4)
@@ -24,8 +25,9 @@ import { Link, useHistory } from 'react-router-dom';
 // - Puntjes op de i: error en laad-tijden inplemententeren (maar dit kun je inmiddels zelf!)
 
 function SignIn() {
+    const { login } = useContext(AuthContext);
     const { handleSubmit, register } = useForm();
-    const history = useHistory();
+
 
     async function onSubmit(data) {
         console.log(data);
@@ -34,9 +36,11 @@ function SignIn() {
             const result = await axios.post('http://localhost:3000/login', data);
             console.log(result.data.accessToken);
 
-            localStorage.setItem('Banaan', result.data.accessToken);
+            login(result.data.accessToken);
 
-            history.push('/profile');
+            localStorage.setItem('RegisterToken', result.data.accessToken);
+
+
 
         } catch(e) {
             console.error(e);
