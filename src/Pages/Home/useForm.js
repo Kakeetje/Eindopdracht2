@@ -1,10 +1,10 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 
 const UseForm = (callback, validate) => {
 
     const [values, setValues] = useState({
-        post:" "
+        post:" ",
     });
 
     const [errors, setErrors] = useState({});
