@@ -1,6 +1,15 @@
 import React, {useState} from 'react';
 import { Redirect } from 'react-router-dom';
 import PostSubmit from './PostSubmit';
+import {
+    HeroContainer,
+    HeroContent,
+    HeroItems,
+    HeroH1,
+    HeroP,
+    HeroBtn
+} from './HeroElements';
+
 
 function Home() {
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,16 +20,23 @@ function Home() {
 
     return(
         <>
-        <h1 className="Welkom">
+            <HeroContainer>
+                <HeroContent>
+                    <HeroItems>
+                        <HeroH1 className="Welkom">
             Welkom bij Yang Yang Sushi Eindhoven
-        </h1>
-            <h3>
+                        </HeroH1>
+                        <HeroP>
                 Voer hier uw adres in
-            </h3>
-
-            <div>
+                        </HeroP>
+                        <HeroBtn>
+                            <div>
             {!isSubmitted ?  <PostSubmit submitForm={submitForm} /> : <Redirect to="/menu" />}
-            </div>
+                            </div>
+                        </HeroBtn>
+                    </HeroItems>
+                </HeroContent>
+            </HeroContainer>
         </>
     );
 }

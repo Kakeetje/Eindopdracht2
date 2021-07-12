@@ -11,6 +11,7 @@ import Logo from './Assets/Yang Yang Sushi Logo.png';
 import SignIn from './Pages/Login/SignIn';
 import SignUp from "./Pages/Register/SignUp";
 import Profile from "./Pages/Profile/Profile";
+import Footer from './Pages/Footer/Index';
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                         <Route path="/profile">
                             <Profile />
                         </Route>
+                        <Footer/>
                     </Switch>
                 </Router>
                 </>
