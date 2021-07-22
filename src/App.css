@@ -1,14 +1,3 @@
-.cart-count{
-  color: white;
-}
-.CartIcon{
-  filter: invert(100%) sepia(0%) saturate(1215%) hue-rotate(165deg) brightness(111%) contrast(101%);
-  width: 20%;
-  height: 20%;
-  position:relative;
-  top: 10px;
-  left: -5px;
-}
 .header-home{
   background-color: black;
   display: flex;
@@ -42,6 +31,24 @@ nav ul li a:hover{
   color: #ed4b2f;
 }
 
+nav .nav-cart {
+  cursor: pointer;
+  position: absolute;
+  background-color: white;
+}
+
+nav .nav-cart span{
+  position: absolute;
+  top:-12px;
+  right: -7px;
+  background: crimson;
+  font-size: 10px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
 @media (max-width: 650px) {
   header ul{
     position: fixed;
@@ -59,6 +66,8 @@ nav ul li a:hover{
     transition: 0.5s linear;
   }
 }
+
+
 
 
 
