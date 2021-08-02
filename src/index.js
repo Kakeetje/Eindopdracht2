@@ -5,14 +5,17 @@ import './index.css';
 import App from './App';
 import AuthContextProvider from '../src/Context/AuthContext';
 import reportWebVitals from './reportWebVitals';
+import {CartProvider} from "./Pages/Cart/CartContext";
 
 ReactDOM.render(
   <React.StrictMode>
+      <CartProvider>
       <Router>
           <AuthContextProvider>
               <App />
           </AuthContextProvider>
       </Router>
+      </CartProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

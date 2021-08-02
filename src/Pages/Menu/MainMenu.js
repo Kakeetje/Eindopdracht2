@@ -4,7 +4,8 @@ import Chopsticks from "../../Assets/Chopsticks-for-Loading.gif";
 import GerechtenCards from "./GerechtenCards";
 
 
-function MainMenu() {
+
+function MainMenu(props) {
     const [gerechten, setGerechten] = useState(null);
     const [pagina, setPagina] = useState(0);
     const [status, setStatus] = useState("loading");
@@ -23,7 +24,7 @@ function MainMenu() {
     }, [pagina]);
 
     if (status === "loading") {
-        return <img src={Chopsticks} height="250px"/>;
+        return <img alt="" src={Chopsticks} height="250px"/>;
     }  else if (status === "error") {
         return <h1>O jee de pokemons zijn ontsnapt, druk up refresh</h1>;
     } else {
@@ -49,7 +50,7 @@ function MainMenu() {
 
                 <div className="gerechten">
                     {gerechten?.map((gerecht) => {
-                        return <GerechtenCards key={gerecht.name} name={gerecht.name} />
+                        return <GerechtenCards key={gerecht.name} name={gerecht.name}/>
                     })}
                 </div>
             </>

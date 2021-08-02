@@ -12,7 +12,8 @@ import SignIn from './Pages/Login/SignIn';
 import SignUp from "./Pages/Register/SignUp";
 import Profile from "./Pages/Profile/Profile";
 import Footer from './Pages/Footer/Index';
-import Cart from './Assets/shopping-cart-solid.svg';
+import CartIcon from './Assets/shopping-cart-solid.svg';
+import Cart from './Pages/Cart/Cart';
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
                                     <div className="nav-cart">
                                         <span>0</span>
                                         <Link to="/cart">
-                                            <img className="Cart" src={Cart} alt="" width="30" height="50"/>
+                                            <img className="Cart" src={CartIcon} alt="" width="30" height="50"/>
                                         </Link>
                                     </div>
                                 </div>
@@ -68,6 +69,9 @@ function App() {
                         </Route>
                         <Route path="/profile">
                             <Profile />
+                        </Route>
+                        <Route path="/cart">
+                            <Cart />
                         </Route>
                         <Footer/>
                     </Switch>
